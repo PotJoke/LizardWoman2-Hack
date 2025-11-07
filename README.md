@@ -1,6 +1,6 @@
 # Description
 
-DLL file prepeared to be injeceted with something like process Hacker 2 into HumansAreNotThatAgainstLizardwomen2
+DLL file prepared to be injeceted with something like process Hacker 2 into HumansAreNotThatAgainstLizardwomen2
 Now it's unlocks every scene and enables StoryMode
 
 # How is that works
