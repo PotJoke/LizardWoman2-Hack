@@ -7,11 +7,11 @@
 
 uintptr_t base = (uintptr_t)GetModuleHandle(NULL);
 uintptr_t GameAssembly = (uintptr_t)GetModuleHandle("GameAssembly.dll");
-uintptr_t GetStoryMode = 0x388E10;
-uintptr_t StoryMode = 0x386760;
-uintptr_t OneScene = 0x4649B0;
-uintptr_t SetScene = 0x388680;
-uintptr_t SceneOpen = 0x392040;
+uintptr_t GetStoryMode = 0x388E10; //GameController$$GetStoryModeEnabled
+uintptr_t StoryMode = 0x386760; //CustomStoryFunctions$$StoryModeEnabled
+uintptr_t OneScene = 0x4649B0; //Controllers.StoryStateUtilities$$CheckOneOfScenariosUnlocked
+uintptr_t SetScene = 0x388680; //FStoryModel$$CheckSetOfScenariosUnlocked
+uintptr_t SceneOpen = 0x392040; //Player$$isSceneOpened
 
 
 void CreateConsole() {
