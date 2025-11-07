@@ -1,4 +1,4 @@
-﻿// dllmain.cpp : Определяет точку входа для приложения DLL.
+// dllmain.cpp : Определяет точку входа для приложения DLL.
 #include "pch.h"
 
 #include <Windows.h>
@@ -58,16 +58,21 @@ void main() {
     printf("Ready to serve master!\n");
     printf("Now every scene is unlocked and StoryMode Enabled\n");
     printf("Please don't close console\n");
+
     MH_CreateHook(reinterpret_cast<LPVOID*>(GameAssembly + GetStoryMode),
         &getStoryModeEnabled, (LPVOID*)&getStoryModeEnabled_o);
+
     MH_CreateHook(reinterpret_cast<LPVOID*>(GameAssembly + StoryMode),
         &StoryModeEnabled, (LPVOID*)&StoryModeEnabled_o);
+
     MH_CreateHook(reinterpret_cast<LPVOID*>(GameAssembly + OneScene),
         &CheckScenariosUnlocked, (LPVOID*)&CheckOneOfScenariosUnlocked_o);
     MH_CreateHook(reinterpret_cast<LPVOID*>(GameAssembly + SetScene),
         &CheckScenariosUnlocked, (LPVOID*)&CheckSetOfScenariosUnlocked_o);
+
     MH_CreateHook(reinterpret_cast<LPVOID*>(GameAssembly + SceneOpen),
         &isSceneOpened, (LPVOID*)&isSceneOpened_o);
+
     MH_EnableHook(MH_ALL_HOOKS);
 }
 
