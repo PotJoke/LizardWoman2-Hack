@@ -5,6 +5,6 @@ Now it's unlocks every scene and enables StoryMode
 
 # How that works
 
-Basicly, minhook catches programm address and uses defined offset in hex _(if you decompile il2cpp you usually get decimal, so don't forget to conver it)_ and then listening for event to happen. When such happens minhook gets params, stops execution and 
+Essentially, a minhook intercepts the program's address and uses the specified offset in hexadecimal format (if you decompile il2cpp, you'll usually get decimal, so be sure to convert it), then waits for an event. When this happens, the minhook receives its parameters, stops execution, and immediately starts a new one with the same parameters but a different output. I believe this is called overriding.
 
 # How to build
