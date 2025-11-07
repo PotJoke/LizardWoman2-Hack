@@ -13,7 +13,7 @@ uintptr_t OneScene = 0x4649B0; //Controllers.StoryStateUtilities$$CheckOneOfScen
 uintptr_t SetScene = 0x388680; //FStoryModel$$CheckSetOfScenariosUnlocked
 uintptr_t SceneOpen = 0x392040; //Player$$isSceneOpened
 
-
+//I will make button to hide this
 void CreateConsole() {
     AllocConsole();
     FILE* f;

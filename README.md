@@ -10,6 +10,7 @@ Essentially, a minhook intercepts the program's address and uses the specified o
 # How to build
 
 You'll need Visual Studio
+
 Install git, then vcpkg and install minhook using it with this command:
 ```
 .\vcpkg install minhook:x64-windows-static
