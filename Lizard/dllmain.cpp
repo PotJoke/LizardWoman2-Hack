@@ -69,7 +69,6 @@ void main() {
     printf("Greetings from PotJoke\n");
     printf("Looks like everything is ok\n");
     printf("Ready to serve master!\n");
-    printf("Now every scene is unlocked and StoryMode Enabled\n");
     printf("Please don't close console\n");
 
     MH_CreateHook(reinterpret_cast<LPVOID*>(GameAssembly + GetStoryMode),
