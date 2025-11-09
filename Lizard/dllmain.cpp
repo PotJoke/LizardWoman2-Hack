@@ -1,4 +1,4 @@
-// dllmain.cpp : Определяет точку входа для приложения DLL.
+﻿// dllmain.cpp : Определяет точку входа для приложения DLL.
 #include "pch.h"
 
 #include <Windows.h>
@@ -13,7 +13,7 @@ uintptr_t OneScene = 0x4649B0; //Controllers.StoryStateUtilities$$CheckOneOfScen
 uintptr_t SetScene = 0x388680; //FStoryModel$$CheckSetOfScenariosUnlocked
 uintptr_t SceneOpen = 0x392040; //Player$$isSceneOpened
 uintptr_t LevelCleared = 0x52F950; //YMatchThree.Core.LevelGameplay$$IsLevelComplete
-uintptr_t CheckPrice = 0x38A490; //GameController$$checkCoins also no
+uintptr_t CheckPrice = 0x38A490; //GameController$$checkCoins
 
 //I will make button to hide this
 void CreateConsole() {
@@ -58,7 +58,7 @@ bool __stdcall isLevelCleared(DWORD* __this, DWORD* method) {
     return true;
 }
 
-bool(__fastcall* isEnoughMoney_o)(DWORD*, DWORD*, DWORD*, DWORD*, DWORD* );
+bool(__fastcall* isEnoughMoney_o)(DWORD*, DWORD*, DWORD*, DWORD*, DWORD*);
 bool __stdcall isEnoughMoney(DWORD* __this, DWORD* price, DWORD* showAlert, DWORD* callback, DWORD* method) {
     printf("isEnoughMoney called\n");
     return true;
