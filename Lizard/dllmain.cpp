@@ -11,7 +11,7 @@ uintptr_t GetStoryMode = 0x388E10; //GameController$$GetStoryModeEnabled
 uintptr_t StoryMode = 0x386760; //CustomStoryFunctions$$StoryModeEnabled
 uintptr_t OneScene = 0x4649B0; //Controllers.StoryStateUtilities$$CheckOneOfScenariosUnlocked
 uintptr_t SetScene = 0x388680; //FStoryModel$$CheckSetOfScenariosUnlocked
-uintptr_t SceneOpen = 0x392040; //Player$$isSceneOpened
+uintptr_t SceneOpen = 0x392040; //Player$$isSceneOpened also hi
 
 //I will make button to hide this
 void CreateConsole() {
