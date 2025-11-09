@@ -12,6 +12,8 @@ uintptr_t StoryMode = 0x386760; //CustomStoryFunctions$$StoryModeEnabled
 uintptr_t OneScene = 0x4649B0; //Controllers.StoryStateUtilities$$CheckOneOfScenariosUnlocked
 uintptr_t SetScene = 0x388680; //FStoryModel$$CheckSetOfScenariosUnlocked
 uintptr_t SceneOpen = 0x392040; //Player$$isSceneOpened
+uintptr_t LevelCleared = 0x52F950; //YMatchThree.Core.LevelGameplay$$IsLevelComplete
+uintptr_t CheckPrice = 0x38A490; //GameController$$checkCoins also no
 
 //I will make button to hide this
 void CreateConsole() {
@@ -28,13 +30,13 @@ void init() {
 bool(__fastcall* getStoryModeEnabled_o)(DWORD*, DWORD*);
 bool __stdcall getStoryModeEnabled(DWORD* __this, DWORD* method) {
     printf("getStoryModeEnabled called\n");
-    return true;
+    return false;
 }
 
 bool(__fastcall* StoryModeEnabled_o)(DWORD*);
 bool __stdcall StoryModeEnabled(DWORD* method) {
     printf("StoryModeEnabled called\n");
-    return true;
+    return false;
 }
 
 bool(__fastcall* CheckOneOfScenariosUnlocked_o)(DWORD*, DWORD*, DWORD*);
@@ -50,6 +52,17 @@ bool __stdcall isSceneOpened(DWORD* __this, DWORD* novelId, DWORD* scenario, DWO
     return true;
 }
 
+bool(__fastcall* isLevelCleared_o)(DWORD*, DWORD*);
+bool __stdcall isLevelCleared(DWORD* __this, DWORD* method) {
+    printf("isLevelCompleted called\n");
+    return true;
+}
+
+bool(__fastcall* isEnoughMoney_o)(DWORD*, DWORD*, DWORD*, DWORD*, DWORD* );
+bool __stdcall isEnoughMoney(DWORD* __this, DWORD* price, DWORD* showAlert, DWORD* callback, DWORD* method) {
+    printf("isEnoughMoney called\n");
+    return true;
+}
 
 void main() {
     init();
@@ -72,6 +85,12 @@ void main() {
 
     MH_CreateHook(reinterpret_cast<LPVOID*>(GameAssembly + SceneOpen),
         &isSceneOpened, (LPVOID*)&isSceneOpened_o);
+
+    MH_CreateHook(reinterpret_cast<LPVOID*>(GameAssembly + LevelCleared),
+        &isLevelCleared, (LPVOID*)&isLevelCleared_o);
+
+    MH_CreateHook(reinterpret_cast<LPVOID*>(GameAssembly + CheckPrice),
+        &isEnoughMoney, (LPVOID*)&isEnoughMoney_o);
 
     MH_EnableHook(MH_ALL_HOOKS);
 }
